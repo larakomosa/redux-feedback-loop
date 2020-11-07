@@ -9,7 +9,7 @@ class Understanding extends Component {
   render() {
     return (
       <div>
-        <h2>Understanding</h2>
+        <h2>How well are you understanding the content?</h2>
         <p>/understanding</p>
         <button type="submit" onClick={this.handleSubmit}>
           Next Page

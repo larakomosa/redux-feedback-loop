@@ -9,7 +9,7 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        <h2>Comments</h2>
+        <h2>Please leave additional comments here!</h2>
         <p>/feeling</p>
         <button type="submit" onClick={this.handleSubmit}>
           Next Page

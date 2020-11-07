@@ -9,7 +9,7 @@ class Support extends Component {
   render() {
     return (
       <div>
-        <h2>Support</h2>
+        <h2>How well are you being supported?</h2>
         <p>/support</p>
         <button type="submit" onClick={this.handleSubmit}>
           Next Page
