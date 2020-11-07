@@ -31,6 +31,11 @@ function feedbackForm(state = feedback, action) {
       ...state,
       support: action.payload,
     };
+  } else if (action.type === 'COMMENTS') {
+    return {
+      ...state,
+      comments: action.payload,
+    };
   }
   return state;
 }

@@ -40,8 +40,9 @@ class Feeling extends Component {
                   <label>
                     <input
                       type="radio"
+                      name="test"
                       value="1"
-                      checked={this.state.feeling === '1'}
+                      checked={true}
                       onChange={this.handleOptionChange}
                     />
                     1
@@ -51,8 +52,9 @@ class Feeling extends Component {
                   <label>
                     <input
                       type="radio"
+                      name="test"
                       value="2"
-                      checked={this.state.feeling === '2'}
+                      checked
                       onChange={this.handleOptionChange}
                     />
                     2
