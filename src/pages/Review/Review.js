@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Review extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('button triggered');
-    this.props.history.push('/success');
+    this.addFeedback(this.props.store.feedback);
+    console.log(this.props.store.feedback);
   };
 
+  addFeedback(feedback) {
+    axios
+      .post('./form', feedback)
+      .then((result) => {
+        console.log('Final Form Added!');
+        this.props.history.push('/success');
+      })
+      .catch((error) => {
+        alert(`Posting Error`);
+        console.log('Error Posting', error);
+      });
+  }
+
   render() {
-    console.log(this.props.store.feedback);
-    console.log(this.props.store.feedback.feeling);
-    console.log(this.props.store.feedback.support);
-    console.log(this.props.store.feedback.understanding);
-    console.log(this.props.store.feedback.comments);
+    // console.log(this.props.store.feedback);
+    // console.log(this.props.store.feedback.feeling);
+    // console.log(this.props.store.feedback.support);
+    // console.log(this.props.store.feedback.understanding);
+    // console.log(this.props.store.feedback.comments);
     return (
       <div>
         <h2>Feedback Review</h2>
@@ -21,7 +35,7 @@ class Review extends Component {
         <p>Understanding: {this.props.store.feedback.understanding}</p>
         <p>Support: {this.props.store.feedback.support}</p>
         <p>Comments: {this.props.store.feedback.comments}</p>
-        <button onClick={this.handleClickSubmit}>Submit</button>
+        <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );
   }
