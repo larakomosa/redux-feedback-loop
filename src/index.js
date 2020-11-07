@@ -21,6 +21,11 @@ function feedbackForm(state = feedback, action) {
       ...state,
       feeling: action.payload,
     };
+  } else if (action.type === 'UNDERSTANDING') {
+    return {
+      ...state,
+      understanding: action.payload,
+    };
   }
   return state;
 }
