@@ -13,9 +13,16 @@ class Comments extends Component {
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments });
-    this.props.history.push('/review');
+    if (this.state.comments === '') {
+      alert('Please complete task field before submitting');
+    } else {
+      event.preventDefault();
+      this.props.dispatch({
+        type: 'ADD_COMMENTS',
+        payload: this.state.comments,
+      });
+      this.props.history.push('/review');
+    }
   };
 
   render() {

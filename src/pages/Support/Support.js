@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
   state = {
-    support: '1',
+    support: '',
   };
 
   handleOptionChange = (changeEvent) => {
@@ -15,12 +15,16 @@ class Support extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log('button triggered');
-    this.props.dispatch({
-      type: 'ADD_SUPPORT',
-      payload: parseInt(this.state.support),
-    });
-    console.log(this.state);
-    this.props.history.push('/comments');
+    if (this.state.support === '') {
+      alert('Please complete task field before submitting');
+    } else {
+      this.props.dispatch({
+        type: 'ADD_SUPPORT',
+        payload: parseInt(this.state.support),
+      });
+      console.log(this.state);
+      this.props.history.push('/comments');
+    }
   };
 
   render() {

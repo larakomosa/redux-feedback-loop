@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
   state = {
-    understanding: '1',
+    understanding: '',
   };
 
   handleOptionChange = (changeEvent) => {
@@ -15,12 +15,16 @@ class Understanding extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log('button triggered');
-    this.props.dispatch({
-      type: 'ADD_UNDERSTANDING',
-      payload: parseInt(this.state.understanding),
-    });
-    this.props.history.push('/support');
-    console.log('state', this.state);
+    if (this.state.understanding === '') {
+      alert('Please complete task field before submitting');
+    } else {
+      this.props.dispatch({
+        type: 'ADD_UNDERSTANDING',
+        payload: parseInt(this.state.understanding),
+      });
+      this.props.history.push('/support');
+      console.log('state', this.state);
+    }
   };
 
   render() {
