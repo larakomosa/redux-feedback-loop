@@ -4,24 +4,37 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { HashRouter as Router } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const feedback = {
+  feeling: '',
+  understanding: '',
+  support: '',
+  comments: '',
+};
+function feedbackForm(state = feedback, action) {
+  if (action.type === 'FEELING') {
+    return {
+      ...state,
+      feeling: action.payload,
+    };
+  }
+  return state;
+}
+
 const storeInstance = createStore(
   combineReducers({
-    //coming soon :)
+    feedbackForm,
   }),
   applyMiddleware(logger)
 );
 
 ReactDOM.render(
   <Provider store={storeInstance}>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
-registerServiceWorker();

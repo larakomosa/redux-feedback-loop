@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Feeling extends Component {
   state = {
     feedback: {
-      feeling: 1,
+      feeling: '1',
     },
   };
 
@@ -14,9 +15,15 @@ class Feeling extends Component {
       },
     });
   };
+
   handleSubmit = (event) => {
     event.preventDefault();
     console.log('button triggered');
+    this.props.dispatch({
+      type: 'FEELING',
+      payload: this.state.feedback,
+    });
+    console.log(this.state.feedback);
     this.props.history.push('/understanding');
   };
 
@@ -85,6 +92,9 @@ class Feeling extends Component {
                   </label>
                 </div>
               </form>
+              <button type="submit" onClick={this.handleSubmit}>
+                Next
+              </button>
             </div>
           </div>
         </div>
@@ -92,5 +102,4 @@ class Feeling extends Component {
     );
   }
 }
-
-export default Feeling;
+export default connect()(Feeling);
