@@ -34,63 +34,53 @@ class Feeling extends Component {
         <h2>How are you feeling today?</h2>
         <div className="container">
           <div className="row <RadioGroup row />">
-            <div className="col-sm-12">
+            <div className="col-sm-5">
               <form>
-                <div className="radio">
-                  <label>
-                    <input
-                      type="radio"
-                      value="1"
-                      checked={this.state.feeling === '1'}
-                      onChange={this.handleOptionChange}
-                    />
-                    1
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input
-                      type="radio"
-                      value="2"
-                      checked={this.state.feeling === '2'}
-                      onChange={this.handleOptionChange}
-                    />
-                    2
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input
-                      type="radio"
-                      value="3"
-                      checked={this.state.feeling === '3'}
-                      onChange={this.handleOptionChange}
-                    />
-                    3
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input
-                      type="radio"
-                      value="4"
-                      checked={this.state.feeling === '4'}
-                      onChange={this.handleOptionChange}
-                    />
-                    4
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input
-                      type="radio"
-                      value="5"
-                      checked={this.state.feeling === '5'}
-                      onChange={this.handleOptionChange}
-                    />
-                    5
-                  </label>
-                </div>
+                <label>
+                  <input
+                    type="radio"
+                    value="1"
+                    checked={this.state.feeling === '1'}
+                    onChange={this.handleOptionChange}
+                  />
+                  1
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="2"
+                    checked={this.state.feeling === '2'}
+                    onChange={this.handleOptionChange}
+                  />
+                  2
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="3"
+                    checked={this.state.feeling === '3'}
+                    onChange={this.handleOptionChange}
+                  />
+                  3
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="4"
+                    checked={this.state.feeling === '4'}
+                    onChange={this.handleOptionChange}
+                  />
+                  4
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="5"
+                    checked={this.state.feeling === '5'}
+                    onChange={this.handleOptionChange}
+                  />
+                  5
+                </label>
               </form>
               <Button
                 variant="contained"

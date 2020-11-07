@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import swal from 'sweetalert';
 import { Button } from '@material-ui/core';
 
 class Review extends Component {
   handleSubmit = (event) => {
+    swal('You feedback has been submitted!');
     event.preventDefault();
     this.addFeedback(this.props.store.feedback);
     console.log(this.props.store.feedback);
@@ -13,7 +15,7 @@ class Review extends Component {
   addFeedback(feedback) {
     axios
       .post('./form', feedback)
-      .then((result) => {
+      .then((response) => {
         console.log('Final Form Added!');
         this.props.history.push('/success');
       })
