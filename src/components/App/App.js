@@ -23,10 +23,10 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Feeling} />
           <Route exact path="/understanding" component={Understanding} />
-          <Route path="/support" component={Support} />
-          <Route path="/comments" component={Comments} />
-          <Route path="/review" component={Review} />
-          <Route path="/submit" component={Submit} />
+          <Route exact path="/support" component={Support} />
+          <Route exact path="/comments" component={Comments} />
+          <Route exact path="/review" component={Review} />
+          <Route exact path="/submit" component={Submit} />
         </Router>
       </div>
     );

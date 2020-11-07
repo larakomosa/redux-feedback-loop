@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 
-class UnderstandingPage extends Component {
+class Understanding extends Component {
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('button triggered');
+    this.props.history.push('/support');
+  };
   render() {
     return (
       <div>
         <h2>Understanding</h2>
         <p>/understanding</p>
+        <button type="submit" onClick={this.handleSubmit}>
+          Next Page
+        </button>
       </div>
     );
   }
 }
 
-export default UnderstandingPage;
+export default Understanding;
