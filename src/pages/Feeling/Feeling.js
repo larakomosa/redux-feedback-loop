@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
+import { Button } from '@material-ui/core';
 
 class Feeling extends Component {
   state = {
@@ -32,7 +33,7 @@ class Feeling extends Component {
       <div>
         <h2>How are you feeling today?</h2>
         <div className="container">
-          <div className="row">
+          <div className="row <RadioGroup row />">
             <div className="col-sm-12">
               <form>
                 <div className="radio">
@@ -91,9 +92,15 @@ class Feeling extends Component {
                   </label>
                 </div>
               </form>
-              <button type="submit" onClick={this.handleSubmit}>
-                Next
-              </button>
+              <Button
+                variant="contained"
+                color="Primary"
+                type="submit"
+                size="small"
+                onClick={this.handleSubmit}
+              >
+                Next &#x2192;
+              </Button>
             </div>
           </div>
         </div>

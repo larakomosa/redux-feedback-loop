@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import swal from 'sweetalert';
+import { Button } from '@material-ui/core';
 
 class Comments extends Component {
   state = {
@@ -14,16 +14,12 @@ class Comments extends Component {
   };
 
   handleSubmit = (event) => {
-    if (this.state.comments === '') {
-      swal('Please select a number that indicates how you are feeling');
-    } else {
-      event.preventDefault();
-      this.props.dispatch({
-        type: 'ADD_COMMENTS',
-        payload: this.state.comments,
-      });
-      this.props.history.push('/review');
-    }
+    event.preventDefault();
+    this.props.dispatch({
+      type: 'ADD_COMMENTS',
+      payload: this.state.comments,
+    });
+    this.props.history.push('/review');
   };
 
   render() {
@@ -36,9 +32,15 @@ class Comments extends Component {
             type="text"
             onChange={(event) => this.handleChangeFor('comments', event)}
           />
-          <button type="submit" onClick={this.handleSubmit}>
-            Next
-          </button>
+          <Button
+            variant="contained"
+            color="Primary"
+            type="submit"
+            size="small"
+            onClick={this.handleSubmit}
+          >
+            Next &#x2192;
+          </Button>
         </form>
       </div>
     );

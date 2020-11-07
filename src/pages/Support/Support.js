@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
+import { Button } from '@material-ui/core';
 
 class Support extends Component {
   state = {
@@ -93,9 +94,15 @@ class Support extends Component {
                   </label>
                 </div>
               </form>
-              <button type="submit" onClick={this.handleSubmit}>
-                Next
-              </button>
+              <Button
+                variant="contained"
+                color="Primary"
+                type="submit"
+                size="small"
+                onClick={this.handleSubmit}
+              >
+                Next &#x2192;
+              </Button>
             </div>
           </div>
         </div>

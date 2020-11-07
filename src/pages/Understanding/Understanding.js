@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
+import { Button } from '@material-ui/core';
 
 class Understanding extends Component {
   state = {
@@ -16,7 +18,7 @@ class Understanding extends Component {
     event.preventDefault();
     console.log('button triggered');
     if (this.state.understanding === '') {
-      alert('Please complete task field before submitting');
+      swal('Please select a number that indicates how you are feeling');
     } else {
       this.props.dispatch({
         type: 'ADD_UNDERSTANDING',
@@ -92,9 +94,15 @@ class Understanding extends Component {
                   </label>
                 </div>
               </form>
-              <button type="submit" onClick={this.handleSubmit}>
-                Next
-              </button>
+              <Button
+                variant="contained"
+                color="Primary"
+                type="submit"
+                size="small"
+                onClick={this.handleSubmit}
+              >
+                Next &#x2192;
+              </Button>
             </div>
           </div>
         </div>

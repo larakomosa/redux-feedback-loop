@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { Button } from '@material-ui/core';
 
 class Review extends Component {
   handleSubmit = (event) => {
@@ -35,7 +36,15 @@ class Review extends Component {
         <p>Understanding: {this.props.store.feedback.understanding}</p>
         <p>Support: {this.props.store.feedback.support}</p>
         <p>Comments: {this.props.store.feedback.comments}</p>
-        <button onClick={this.handleSubmit}>Submit</button>
+        <Button
+          variant="contained"
+          color="Primary"
+          type="submit"
+          size="small"
+          onClick={this.handleSubmit}
+        >
+          Submit &#x2713;
+        </Button>
       </div>
     );
   }
