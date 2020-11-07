@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 class Comments extends Component {
   state = {
@@ -14,7 +15,7 @@ class Comments extends Component {
 
   handleSubmit = (event) => {
     if (this.state.comments === '') {
-      alert('Please complete task field before submitting');
+      swal('Please select a number that indicates how you are feeling');
     } else {
       event.preventDefault();
       this.props.dispatch({

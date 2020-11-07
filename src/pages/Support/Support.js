@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 class Support extends Component {
   state = {
@@ -16,7 +17,7 @@ class Support extends Component {
     event.preventDefault();
     console.log('button triggered');
     if (this.state.support === '') {
-      alert('Please complete task field before submitting');
+      swal('Please select a number that indicates how you are feeling');
     } else {
       this.props.dispatch({
         type: 'ADD_SUPPORT',
