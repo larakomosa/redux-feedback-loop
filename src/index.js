@@ -33,6 +33,8 @@ const feedback = (
       ...state,
       comments: action.payload,
     };
+  } else if (action.type === 'START_OVER') {
+    return { feeling: 0, understanding: 0, support: 0, comments: '' };
   }
   return state;
 };

@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import swal from 'sweetalert';
 
-class Submit extends Component {
+class Success extends Component {
+  handleSubmit = (event) => {
+    this.props.dispatch({ type: 'START_OVER' });
+    this.props.history.push('/');
+  };
+
   render() {
     return (
       <div>
-        <h2>Submit</h2>
-        <p>/submit</p>
+        <h2>Thank you for your Feedback!</h2>
         <button type="submit" onClick={this.handleSubmit}>
-          Submit Feedback
+          Take a New Survey
         </button>
       </div>
     );
   }
 }
 
-export default Submit;
+export default connect()(Success);
