@@ -18,7 +18,7 @@ class Comments extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.dispatch({ type: 'FEEDBACK', payload: this.state.feedback });
+    this.props.dispatch({ type: 'COMMENTS', payload: this.state.feedback });
     this.props.history.push('/review');
   };
 
