@@ -3,32 +3,30 @@ import { connect } from 'react-redux';
 
 class Feeling extends Component {
   state = {
-    feedback: {
-      feeling: '1',
-    },
+    feeling: '',
   };
 
   handleOptionChange = (changeEvent) => {
     this.setState({
-      feedback: {
-        feeling: changeEvent.target.value,
-      },
+      feeling: changeEvent.target.value,
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('button triggered');
-    this.props.dispatch({
-      type: 'FEELING',
-      payload: this.state.feedback,
-    });
-    console.log(this.state.feedback);
-    this.props.history.push('/understanding');
+    if (this.state.feeling === '') {
+      alert('Please complete task field before submitting');
+    } else {
+      this.props.dispatch({
+        type: 'ADD_FEELING',
+        payload: parseInt(this.state.feeling),
+      });
+      this.props.history.push('/understanding');
+      console.log(this.state);
+    }
   };
 
   render() {
-    console.log('value', this.state);
     return (
       <div>
         <h2>How are you feeling today?</h2>

@@ -3,16 +3,12 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
   state = {
-    feedback: {
-      understanding: '1',
-    },
+    understanding: '1',
   };
 
   handleOptionChange = (changeEvent) => {
     this.setState({
-      feedback: {
-        understanding: changeEvent.target.value,
-      },
+      understanding: changeEvent.target.value,
     });
   };
 
@@ -20,11 +16,11 @@ class Understanding extends Component {
     event.preventDefault();
     console.log('button triggered');
     this.props.dispatch({
-      type: 'UNDERSTANDING',
-      payload: this.state.feedback,
+      type: 'ADD_UNDERSTANDING',
+      payload: parseInt(this.state.understanding),
     });
-    console.log(this.state.feedback);
     this.props.history.push('/support');
+    console.log('state', this.state);
   };
 
   render() {

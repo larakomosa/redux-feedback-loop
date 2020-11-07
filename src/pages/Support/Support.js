@@ -3,16 +3,12 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
   state = {
-    feedback: {
-      support: '1',
-    },
+    support: '1',
   };
 
   handleOptionChange = (changeEvent) => {
     this.setState({
-      feedback: {
-        support: changeEvent.target.value,
-      },
+      support: changeEvent.target.value,
     });
   };
 
@@ -20,10 +16,10 @@ class Support extends Component {
     event.preventDefault();
     console.log('button triggered');
     this.props.dispatch({
-      type: 'SUPPORT',
-      payload: this.state.feedback,
+      type: 'ADD_SUPPORT',
+      payload: parseInt(this.state.support),
     });
-    console.log(this.state.feedback);
+    console.log(this.state);
     this.props.history.push('/comments');
   };
 

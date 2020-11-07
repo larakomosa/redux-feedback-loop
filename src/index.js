@@ -13,22 +13,22 @@ const feedback = (
   state = { feeling: 0, understanding: 0, support: 0, comments: '' },
   action
 ) => {
-  if (action.type === 'FEELING') {
+  if (action.type === 'ADD_FEELING') {
     return {
       ...state,
       feeling: action.payload,
     };
-  } else if (action.type === 'UNDERSTANDING') {
+  } else if (action.type === 'ADD_UNDERSTANDING') {
     return {
       ...state,
       understanding: action.payload,
     };
-  } else if (action.type === 'SUPPORT') {
+  } else if (action.type === 'ADD_SUPPORT') {
     return {
       ...state,
       support: action.payload,
     };
-  } else if (action.type === 'COMMENTS') {
+  } else if (action.type === 'ADD_COMMENTS') {
     return {
       ...state,
       comments: action.payload,

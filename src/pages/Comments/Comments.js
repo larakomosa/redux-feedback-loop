@@ -3,22 +3,18 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
   state = {
-    feedback: {
-      comments: '',
-    },
+    comments: '',
   };
 
   handleChangeFor = (propertyName, event) => {
     this.setState({
-      feedback: {
-        [propertyName]: event.target.value,
-      },
+      [propertyName]: event.target.value,
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.dispatch({ type: 'COMMENTS', payload: this.state.feedback });
+    this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments });
     this.props.history.push('/review');
   };
 
@@ -41,4 +37,10 @@ class Comments extends Component {
   }
 }
 
-export default connect()(Comments);
+const putStoreOnProps = (store) => {
+  return {
+    store,
+  };
+};
+
+export default connect(putStoreOnProps)(Comments);
