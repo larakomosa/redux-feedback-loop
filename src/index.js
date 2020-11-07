@@ -26,6 +26,11 @@ function feedbackForm(state = feedback, action) {
       ...state,
       understanding: action.payload,
     };
+  } else if (action.type === 'SUPPORT') {
+    return {
+      ...state,
+      support: action.payload,
+    };
   }
   return state;
 }
