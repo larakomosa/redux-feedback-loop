@@ -9,13 +9,10 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feedback = {
-  feeling: '',
-  understanding: '',
-  support: '',
-  comments: '',
-};
-function feedbackForm(state = feedback, action) {
+const feedback = (
+  state = { feeling: 0, understanding: 0, support: 0, comments: '' },
+  action
+) => {
   if (action.type === 'FEELING') {
     return {
       ...state,
@@ -38,11 +35,11 @@ function feedbackForm(state = feedback, action) {
     };
   }
   return state;
-}
+};
 
 const storeInstance = createStore(
   combineReducers({
-    feedbackForm,
+    feedback,
   }),
   applyMiddleware(logger)
 );
