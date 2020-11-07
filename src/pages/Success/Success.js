@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import swal from 'sweetalert';
+import { Button } from '@material-ui/core';
 
 class Success extends Component {
   handleSubmit = (event) => {
@@ -12,9 +12,15 @@ class Success extends Component {
     return (
       <div>
         <h2>Thank you for your Feedback!</h2>
-        <button type="submit" onClick={this.handleSubmit}>
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          size="small"
+          onClick={this.handleSubmit}
+        >
           Take a New Survey
-        </button>
+        </Button>
       </div>
     );
   }

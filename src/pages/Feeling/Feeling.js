@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
 import { Button } from '@material-ui/core';
+import Radio from '@material-ui/core/Radio';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 class Feeling extends Component {
   state = {
@@ -33,66 +35,74 @@ class Feeling extends Component {
       <div>
         <h2>How are you feeling today?</h2>
         <div className="container">
-          <div className="row <RadioGroup row />">
-            <div className="col-sm-5">
-              <form>
-                <label>
-                  <input
-                    type="radio"
-                    value="1"
-                    checked={this.state.feeling === '1'}
-                    onChange={this.handleOptionChange}
-                  />
-                  1
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="2"
-                    checked={this.state.feeling === '2'}
-                    onChange={this.handleOptionChange}
-                  />
-                  2
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="3"
-                    checked={this.state.feeling === '3'}
-                    onChange={this.handleOptionChange}
-                  />
-                  3
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="4"
-                    checked={this.state.feeling === '4'}
-                    onChange={this.handleOptionChange}
-                  />
-                  4
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="5"
-                    checked={this.state.feeling === '5'}
-                    onChange={this.handleOptionChange}
-                  />
-                  5
-                </label>
-              </form>
-              <Button
-                variant="contained"
-                color="Primary"
-                type="submit"
-                size="small"
-                onClick={this.handleSubmit}
-              >
-                Next &#x2192;
-              </Button>
-            </div>
-          </div>
+          <form>
+            &#128078;
+            <label>
+              <FormControlLabel
+                control={<Radio color="primary" />}
+                label="1"
+                labelPlacement="top"
+                type="radio"
+                value="1"
+                checked={this.state.feeling === '1'}
+                onChange={this.handleOptionChange}
+              />
+            </label>
+            <label>
+              <FormControlLabel
+                control={<Radio color="primary" />}
+                label="2"
+                labelPlacement="top"
+                type="radio"
+                value="2"
+                checked={this.state.feeling === '2'}
+                onChange={this.handleOptionChange}
+              />
+            </label>
+            <label>
+              <FormControlLabel
+                control={<Radio color="primary" />}
+                label="3"
+                labelPlacement="top"
+                type="radio"
+                value="3"
+                checked={this.state.feeling === '3'}
+                onChange={this.handleOptionChange}
+              />
+            </label>
+            <label>
+              <FormControlLabel
+                control={<Radio color="primary" />}
+                label="4"
+                labelPlacement="top"
+                type="radio"
+                value="4"
+                checked={this.state.feeling === '4'}
+                onChange={this.handleOptionChange}
+              />
+            </label>
+            <label>
+              <FormControlLabel
+                control={<Radio color="primary" />}
+                label="5"
+                labelPlacement="top"
+                type="radio"
+                value="5"
+                checked={this.state.feeling === '5'}
+                onChange={this.handleOptionChange}
+              />
+            </label>
+            &#x1F44D;
+          </form>
+          <Button
+            variant="outlined"
+            color="primary"
+            type="submit"
+            size="small"
+            onClick={this.handleSubmit}
+          >
+            Next &#x2192;
+          </Button>
         </div>
       </div>
     );

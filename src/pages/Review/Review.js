@@ -25,6 +25,11 @@ class Review extends Component {
       });
   }
 
+  handleBack = (event) => {
+    event.preventDefault();
+    this.props.history.push('/comments');
+  };
+
   render() {
     // console.log(this.props.store.feedback);
     // console.log(this.props.store.feedback.feeling);
@@ -38,15 +43,27 @@ class Review extends Component {
         <p>Understanding: {this.props.store.feedback.understanding}</p>
         <p>Support: {this.props.store.feedback.support}</p>
         <p>Comments: {this.props.store.feedback.comments}</p>
-        <Button
-          variant="contained"
-          color="Primary"
-          type="submit"
-          size="small"
-          onClick={this.handleSubmit}
-        >
-          Submit &#x2713;
-        </Button>
+        <div className="buttons">
+          <Button
+            variant="outlined"
+            color="primary"
+            type="submit"
+            size="small"
+            onClick={this.handleBack}
+          >
+            &#x2190;Back
+          </Button>
+          {'  '}
+          <Button
+            variant="outlined"
+            color="primary"
+            type="submit"
+            size="small"
+            onClick={this.handleSubmit}
+          >
+            Submit &#x2713;
+          </Button>
+        </div>
       </div>
     );
   }

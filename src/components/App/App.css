@@ -17,3 +17,10 @@
   font-size: large;
 }
 
+form {
+  margin-bottom: 10px;
+}
+
+.spacing {
+  margin: 60px;
+}
