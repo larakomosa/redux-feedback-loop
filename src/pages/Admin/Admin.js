@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import FeedbackListItem from '../AdminItem/AdminItem';
 import { Table } from '@material-ui/core';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 class Admin extends Component {
   state = {
@@ -35,23 +41,33 @@ class Admin extends Component {
 
   render() {
     const feedbackArray = this.state.feedbackList.map((item, index) => {
-      return (
-        <tr>
-          <FeedbackListItem key={index} list={item} />
-        </tr>
-      );
+      return <FeedbackListItem key={index} list={item} />;
     });
     return (
-      <Table>
-        <thead>
-          <th>ID</th>
-          <th>Feeling</th>
-          <th>Understanding</th>
-          <th>Support</th>
-          <th>Comments</th>
-        </thead>
-        <tbody>{feedbackArray}</tbody>;
-      </Table>
+      <TableContainer component={Paper}>
+        <Table size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell colSpan={1} align="left">
+                ID
+              </TableCell>
+              <TableCell colSpan={1} align="left">
+                Feeling
+              </TableCell>
+              <TableCell colSpan={1} align="left">
+                Understanding
+              </TableCell>
+              <TableCell colSpan={1} align="left">
+                Support
+              </TableCell>
+              <TableCell colSpan={4} align="left">
+                Comments
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{feedbackArray}</TableBody>
+        </Table>
+      </TableContainer>
     );
   }
 }

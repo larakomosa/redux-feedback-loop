@@ -1,16 +1,26 @@
 import React from 'react';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
 function FeedbackListItem(props) {
   return (
-    <div>
-      <tr>
-        <td> {props.list.id}</td>
-        <td>{props.list.feeling}</td>
-        <td>{props.list.understanding}</td>
-        <td>{props.list.support}</td>
-        <td>{props.list.comments}</td>
-      </tr>
-    </div>
+    <TableRow>
+      <TableCell colSpan={1} align="left">
+        {props.list.id}
+      </TableCell>
+      <TableCell colSpan={1} align="left">
+        {props.list.feeling}
+      </TableCell>
+      <TableCell colSpan={1} align="left">
+        {props.list.understanding}
+      </TableCell>
+      <TableCell colSpan={1} align="left">
+        {props.list.support}
+      </TableCell>
+      <TableCell colSpan={4} align="left">
+        {props.list.comments}
+      </TableCell>
+    </TableRow>
   );
 }
 
