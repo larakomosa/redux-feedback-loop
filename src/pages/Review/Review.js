@@ -35,7 +35,7 @@ class Review extends Component {
       //accessing store to provide a review of all info gathered and stored locally in index.js
       <div>
         .<h2>Feedback Review</h2>
-        <p>Feelings: {this.props.store.feedback.feeling}</p>
+        <p>Feeling: {this.props.store.feedback.feeling}</p>
         <p>Understanding: {this.props.store.feedback.understanding}</p>
         <p>Support: {this.props.store.feedback.support}</p>
         <p>Comments: {this.props.store.feedback.comments}</p>
