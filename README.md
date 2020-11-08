@@ -1,9 +1,27 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Prime Feedback Form
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This form allows users to leave feedback each day based on their experience. Information is stored locally and then sent to a database once a user reviews and submits their information.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/67838283/98482455-26e9d800-21c7-11eb-9778-d1b62aa02cc3.png)
+
+## Usage
+
+Click next on each page to navigate to the next survey questions. To adjust your responses, simply hit the back button. You will have the chance to review your answers before a final submit.
+
+## Built With
+
+React
+Redux
+JavaScript
+Material UI
+CSS
+HTML
+Axios
+
+## Acknowledgement
+
+Thank you to Prime Digital Academy for equipping me with the knowledge and resources to create this application. Their instructors are first-rate!
