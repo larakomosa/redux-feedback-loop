@@ -10,7 +10,7 @@ This form allows users to leave feedback each day based on their experience. Inf
 
 ## Usage
 
-Click next on each page to navigate to the next survey questions. To adjust your responses, simply hit the back button. You will have the chance to review your answers before a final submit.
+Click next on each page to navigate to the next survey question. To adjust your responses, simply hit the back button. You will have the chance to review your answers before a final submit.
 
 ## Built With
 
