@@ -15,27 +15,16 @@ class Success extends Component {
   render() {
     return (
       <div>
-        <h2>Thank you for your Feedback!</h2>
+        <h3>Thank you for your Feedback!</h3>
         <Button
           variant="outlined"
           color="primary"
           type="submit"
-          size="small"
+          size="large"
           onClick={this.handleSubmit}
         >
           Take a New Survey
         </Button>
-        <div className="admin">
-          <Button
-            variant="outlined"
-            color="primary"
-            type="submit"
-            size="small"
-            onClick={this.handleAdmin}
-          >
-            Admin
-          </Button>
-        </div>
       </div>
     );
   }

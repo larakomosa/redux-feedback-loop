@@ -39,7 +39,7 @@ class Feeling extends Component {
         <h2>How are you feeling today?</h2>
         <div className="container">
           <form>
-            <ThumbUpIcon />
+            <ThumbDownIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -95,7 +95,7 @@ class Feeling extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
-            <ThumbDownIcon />
+            <ThumbUpIcon />
           </form>
           <Button
             variant="outlined"

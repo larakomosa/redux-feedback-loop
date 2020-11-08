@@ -14,28 +14,28 @@ class Understanding extends Component {
 
   handleOptionChange = (changeEvent) => {
     this.setState({
-      understanding: changeEvent.target.value,
+      understanding: changeEvent.target.value, //sets value to targeted radio button value
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('button triggered');
     if (this.state.understanding === '') {
+      //doesn't allow user to advance to next page without selecting radio button
       swal('Please select a number that indicates your understanding');
     } else {
       this.props.dispatch({
         type: 'ADD_UNDERSTANDING',
-        payload: parseInt(this.state.understanding),
+        payload: parseInt(this.state.understanding), //sends data to index.js to be store locally
       });
-      this.props.history.push('/support');
+      this.props.history.push('/support'); //sends user to next page
       console.log('state', this.state);
     }
   };
 
   handleBack = (event) => {
     event.preventDefault();
-    this.props.history.push('/');
+    this.props.history.push('/'); //allows user to back track and change answers
   };
 
   render() {
@@ -44,7 +44,7 @@ class Understanding extends Component {
         <h2>How well do you understand the material?</h2>
         <div className="container">
           <form>
-            <ThumbUpIcon />
+            <ThumbDownIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -100,7 +100,7 @@ class Understanding extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
-            <ThumbDownIcon />
+            <ThumbUpIcon />
           </form>
           <div className="buttons">
             <Button
@@ -110,7 +110,7 @@ class Understanding extends Component {
               size="small"
               onClick={this.handleBack}
             >
-              Back &#x2190;
+              &#x2190;Back
             </Button>
             {'    '}
             <Button

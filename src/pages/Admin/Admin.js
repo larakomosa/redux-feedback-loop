@@ -50,18 +50,10 @@ class Admin extends Component {
           <Table size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell colSpan={1} align="left">
-                  ID
-                </TableCell>
-                <TableCell colSpan={1} align="left">
-                  Feeling
-                </TableCell>
-                <TableCell colSpan={1} align="left">
-                  Understanding
-                </TableCell>
-                <TableCell colSpan={1} align="left">
-                  Support
-                </TableCell>
+                <TableCell align="left">ID</TableCell>
+                <TableCell align="left">Feeling</TableCell>
+                <TableCell align="left">Understanding</TableCell>
+                <TableCell align="left">Support</TableCell>
                 <TableCell colSpan={6} align="left">
                   Comments
                 </TableCell>

@@ -38,7 +38,7 @@ class Comments extends Component {
             id="outlined-basic"
             variant="outlined"
             margin="normal"
-            size="large"
+            size="medium"
             onChange={(event) => this.handleChangeFor('comments', event)}
           />
         </form>

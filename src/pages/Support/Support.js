@@ -13,6 +13,7 @@ class Support extends Component {
   };
 
   handleOptionChange = (changeEvent) => {
+    //sets value to targeted radio button value
     this.setState({
       support: changeEvent.target.value,
     });
@@ -20,14 +21,14 @@ class Support extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('button triggered');
     if (this.state.support === '') {
+      //requires user to select radio button value before moving to next page
       swal(
         'Please select a number that indicates how well supported you feel!'
       );
     } else {
       this.props.dispatch({
-        type: 'ADD_SUPPORT',
+        type: 'ADD_SUPPORT', //sends data to index.js to be store locally
         payload: parseInt(this.state.support),
       });
       console.log(this.state);
@@ -36,7 +37,7 @@ class Support extends Component {
   };
 
   handleBack = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //allows user to back track to previous pages
     this.props.history.push('/understanding');
   };
 
@@ -46,7 +47,7 @@ class Support extends Component {
         <h2>How well do you feel supported today?</h2>
         <div className="container">
           <form>
-            <ThumbUpIcon />
+            <ThumbDownIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -102,7 +103,7 @@ class Support extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
-            <ThumbDownIcon />
+            <ThumbUpIcon />
           </form>
           <div className="buttons">
             <Button
@@ -113,7 +114,7 @@ class Support extends Component {
               size="small"
               onClick={this.handleBack}
             >
-              Back &#x2190;
+              &#x2190;Back
             </Button>
             {'    '}
             <Button
