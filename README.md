@@ -14,13 +14,13 @@ Click next on each page to navigate to the next survey questions. To adjust your
 
 ## Built With
 
-React
-Redux
-JavaScript
-Material UI
-CSS
-HTML
-Axios
+- React
+- Redux
+- JavaScript
+- Material UI
+- CSS
+- HTML
+- Axios
 
 ## Acknowledgement
 
