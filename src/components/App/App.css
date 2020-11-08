@@ -24,3 +24,13 @@ form {
 .spacing {
   margin: 60px;
 }
+
+td {
+  height: 20px;
+  width: 50px;
+}
+
+th {
+  height: 20px;
+  width: 50px;
+}

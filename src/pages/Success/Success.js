@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core';
 class Success extends Component {
   handleSubmit = (event) => {
     this.props.dispatch({ type: 'START_OVER' });
-    this.props.history.push('/');
+    this.props.history.push('/admin');
   };
 
   render() {
@@ -13,7 +13,7 @@ class Success extends Component {
       <div>
         <h2>Thank you for your Feedback!</h2>
         <Button
-          variant="contained"
+          variant="outlined"
           color="primary"
           type="submit"
           size="small"

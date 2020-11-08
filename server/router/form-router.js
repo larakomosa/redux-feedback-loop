@@ -20,4 +20,19 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+  const queryText = 'SELECT * FROM "feedback" ORDER BY "id" DESC;';
+
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
