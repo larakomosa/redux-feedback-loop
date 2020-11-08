@@ -1,14 +1,15 @@
+import FeedbackListItem from '../AdminItem/AdminItem';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import FeedbackListItem from '../AdminItem/AdminItem';
+
 import { Table } from '@material-ui/core';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 
 class Admin extends Component {
   state = {
@@ -34,7 +35,7 @@ class Admin extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          errorMsg: 'Something went terribly wrong.', //indicated error
+          errorMsg: 'Something went terribly wrong.', //indicates error
         });
       });
   };
@@ -46,7 +47,7 @@ class Admin extends Component {
     return (
       <div className="table">
         <h1>Feedback Data</h1>
-        <TableContainer component={Paper}>
+        <TableContainer>
           <Table size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
@@ -67,8 +68,4 @@ class Admin extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({
-  store,
-});
-
-export default connect(mapStateToProps)(Admin);
+export default connect()(Admin);

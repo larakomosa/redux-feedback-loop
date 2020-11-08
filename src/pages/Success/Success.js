@@ -3,13 +3,9 @@ import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 
 class Success extends Component {
-  handleSubmit = (event) => {
+  startOver = (event) => {
     this.props.dispatch({ type: 'START_OVER' });
     this.props.history.push('/');
-  };
-
-  handleAdmin = (event) => {
-    this.props.history.push('/admin');
   };
 
   render() {
@@ -21,7 +17,7 @@ class Success extends Component {
           color="primary"
           type="submit"
           size="large"
-          onClick={this.handleSubmit}
+          onClick={this.startOver}
         >
           Take a New Survey
         </Button>

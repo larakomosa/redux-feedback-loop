@@ -23,9 +23,7 @@ class Support extends Component {
     event.preventDefault();
     if (this.state.support === '') {
       //requires user to select radio button value before moving to next page
-      swal(
-        'Please select a number that indicates how well supported you feel!'
-      );
+      swal('Please select a number that indicates how supported you feel!');
     } else {
       this.props.dispatch({
         type: 'ADD_SUPPORT', //sends data to index.js to be store locally

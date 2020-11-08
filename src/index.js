@@ -37,7 +37,7 @@ const feedback = (
       comments: action.payload,
     };
   } else if (action.type === 'START_OVER') {
-    //when submit button is clicked, object is returns to initial state
+    //when submit button is clicked, object is returned to initial state
     return { feeling: 0, understanding: 0, support: 0, comments: '' };
   }
   return state;
