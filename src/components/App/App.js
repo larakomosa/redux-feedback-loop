@@ -5,7 +5,7 @@ import './App.css';
 //import redux and routers
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-//import pages
+//import pages using routes
 import Feeling from '../../pages/Feeling/Feeling';
 import Support from '../../pages/Support/Support';
 import Understanding from '../../pages/Understanding/Understanding';
@@ -14,12 +14,13 @@ import Review from '../../pages/Review/Review';
 import Success from '../../pages/Success/Success';
 import Admin from '../../pages/Admin/Admin';
 
+//final render/order/paths of all pages
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
+          <h1 className="App-title"> Feedback!</h1>
         </header>
         <Router>
           <Route exact path="/" component={Feeling} />

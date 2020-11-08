@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 class Comments extends Component {
@@ -11,7 +10,7 @@ class Comments extends Component {
 
   handleChangeFor = (propertyName, event) => {
     this.setState({
-      [propertyName]: event.target.value,
+      [propertyName]: event.target.value, //sets value of comments to what user inputs in comments text box
     });
   };
 
@@ -19,14 +18,14 @@ class Comments extends Component {
     event.preventDefault();
     this.props.dispatch({
       type: 'ADD_COMMENTS',
-      payload: this.state.comments,
+      payload: this.state.comments, //sends data to index.js to be stored locally
     });
     this.props.history.push('/review');
   };
 
   handleBack = (event) => {
     event.preventDefault();
-    this.props.history.push('/support');
+    this.props.history.push('/support'); //allows user to backtrack and change answers
   };
 
   render() {
@@ -35,9 +34,11 @@ class Comments extends Component {
         <h2>Would you like to leave any comments?</h2>
         <form>
           <TextField
+            className="textField"
             id="outlined-basic"
-            label="Comments"
             variant="outlined"
+            margin="normal"
+            size="large"
             onChange={(event) => this.handleChangeFor('comments', event)}
           />
         </form>
@@ -49,7 +50,7 @@ class Comments extends Component {
             size="small"
             onClick={this.handleBack}
           >
-            Back &#x2190;
+            &#x2190; Back
           </Button>
           {'    '}
           <Button
@@ -67,10 +68,4 @@ class Comments extends Component {
   }
 }
 
-const putStoreOnProps = (store) => {
-  return {
-    store,
-  };
-};
-
-export default connect(putStoreOnProps)(Comments);
+export default connect()(Comments);

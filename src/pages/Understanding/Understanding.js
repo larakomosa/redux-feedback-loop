@@ -4,6 +4,8 @@ import swal from 'sweetalert';
 import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 class Understanding extends Component {
   state = {
@@ -42,7 +44,7 @@ class Understanding extends Component {
         <h2>How well do you understand the material?</h2>
         <div className="container">
           <form>
-            &#128078;
+            <ThumbUpIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -98,7 +100,7 @@ class Understanding extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
-            &#x1F44D;
+            <ThumbDownIcon />
           </form>
           <div className="buttons">
             <Button

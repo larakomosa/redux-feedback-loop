@@ -13,32 +13,28 @@ class Review extends Component {
   };
 
   addFeedback(feedback) {
+    //axios call to post data to server
     axios
       .post('./form', feedback)
       .then((response) => {
-        console.log('Final Form Added!');
-        this.props.history.push('/success');
+        this.props.history.push('/success'); //moves user to success page
       })
       .catch((error) => {
-        alert(`Posting Error`);
-        console.log('Error Posting', error);
+        alert(`Submission Error`);
+        console.log(error);
       });
   }
 
   handleBack = (event) => {
     event.preventDefault();
-    this.props.history.push('/comments');
+    this.props.history.push('/comments'); //allows user to backtrack and change answers
   };
 
   render() {
-    // console.log(this.props.store.feedback);
-    // console.log(this.props.store.feedback.feeling);
-    // console.log(this.props.store.feedback.support);
-    // console.log(this.props.store.feedback.understanding);
-    // console.log(this.props.store.feedback.comments);
     return (
+      //accessing store to provide a review of all info gathered and stored locally in index.js
       <div>
-        <h2>Feedback Review</h2>
+        .<h2>Feedback Review</h2>
         <p>Feelings: {this.props.store.feedback.feeling}</p>
         <p>Understanding: {this.props.store.feedback.understanding}</p>
         <p>Support: {this.props.store.feedback.support}</p>
@@ -70,6 +66,7 @@ class Review extends Component {
 }
 
 const putStoreOnProps = (store) => {
+  //access to store data in index.js
   return {
     store,
   };

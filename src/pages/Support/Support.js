@@ -4,6 +4,8 @@ import swal from 'sweetalert';
 import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 class Support extends Component {
   state = {
@@ -20,7 +22,9 @@ class Support extends Component {
     event.preventDefault();
     console.log('button triggered');
     if (this.state.support === '') {
-      swal('Please select a number that indicates how you are feeling');
+      swal(
+        'Please select a number that indicates how well supported you feel!'
+      );
     } else {
       this.props.dispatch({
         type: 'ADD_SUPPORT',
@@ -39,10 +43,10 @@ class Support extends Component {
   render() {
     return (
       <div>
-        <h2>How are you feeling today?</h2>
+        <h2>How well do you feel supported today?</h2>
         <div className="container">
           <form>
-            &#128078;
+            <ThumbUpIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -98,7 +102,7 @@ class Support extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
-            &#x1F44D;
+            <ThumbDownIcon />
           </form>
           <div className="buttons">
             <Button

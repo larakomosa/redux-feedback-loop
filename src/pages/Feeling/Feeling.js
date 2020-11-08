@@ -4,9 +4,12 @@ import swal from 'sweetalert';
 import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown'; //imports from Material UI to use elements
 
 class Feeling extends Component {
   state = {
+    //setting state
     feeling: '',
   };
 
@@ -14,19 +17,19 @@ class Feeling extends Component {
     this.setState({
       feeling: changeEvent.target.value,
     });
-  };
+  }; //feeling value is changed to targeted radio button
 
   handleSubmit = (event) => {
     event.preventDefault();
     if (this.state.feeling === '') {
+      //doesn't allow user to advance to next page without selecting radio button
       swal('Please select a number that indicates how you are feeling');
     } else {
       this.props.dispatch({
-        type: 'ADD_FEELING',
+        type: 'ADD_FEELING', //sending information to index.js to be stored locally
         payload: parseInt(this.state.feeling),
       });
-      this.props.history.push('/understanding');
-      console.log(this.state);
+      this.props.history.push('/understanding'); //moves user to next page
     }
   };
 
@@ -36,7 +39,7 @@ class Feeling extends Component {
         <h2>How are you feeling today?</h2>
         <div className="container">
           <form>
-            &#128078;
+            <ThumbUpIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -92,14 +95,14 @@ class Feeling extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
-            &#x1F44D;
+            <ThumbDownIcon />
           </form>
           <Button
             variant="outlined"
             color="primary"
             type="submit"
             size="small"
-            onClick={this.handleSubmit}
+            onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
           >
             Next &#x2192;
           </Button>

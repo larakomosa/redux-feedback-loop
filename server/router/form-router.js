@@ -20,6 +20,23 @@ router.post('/', (req, res) => {
     });
 });
 
+router.delete('/:id', (req, res) => {
+  // req.params is {} { id: '' }
+  const taskId = req.params.id;
+  const queryText = `DELETE FROM "feedback" WHERE id=$1;`;
+  const queryArrayData = [taskId];
+
+  pool
+    .query(queryText, queryArrayData)
+    .then((dbResponse) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 router.get('/', (req, res) => {
   const queryText = 'SELECT * FROM "feedback" ORDER BY "id" DESC;';
 

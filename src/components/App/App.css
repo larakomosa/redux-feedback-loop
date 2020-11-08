@@ -3,14 +3,14 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-image: url(header.png);
   min-height: 70px;
-  padding: 20px;
+  padding: 5px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
 }
 
 .App-intro {
@@ -25,16 +25,30 @@ form {
   margin: 60px;
 }
 
-td {
-  height: 20px;
-  width: 50px;
+h2 {
+  margin-bottom: 5px;
+  color: rgb(3, 3, 34);
 }
 
-th {
-  height: 20px;
-  width: 50px;
+p {
+  color: navy;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .table {
   width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.admin {
+  margin-top: 50px;
+}
+
+.textField {
+  width: 500px;
 }

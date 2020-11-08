@@ -16,10 +16,10 @@ class Admin extends Component {
   };
 
   componentDidMount() {
-    this.getImages(); //ready on page load. (comparable to document on ready Jquery function)
+    this.getFeedback(); //ready on page load. (comparable to document on ready Jquery function)
   }
 
-  getImages = () => {
+  getFeedback = () => {
     // axios call retrieves galleryList data from server
     axios({
       method: 'GET',
@@ -44,30 +44,33 @@ class Admin extends Component {
       return <FeedbackListItem key={index} list={item} />;
     });
     return (
-      <TableContainer component={Paper}>
-        <Table size="small" aria-label="a dense table">
-          <TableHead>
-            <TableRow>
-              <TableCell colSpan={1} align="left">
-                ID
-              </TableCell>
-              <TableCell colSpan={1} align="left">
-                Feeling
-              </TableCell>
-              <TableCell colSpan={1} align="left">
-                Understanding
-              </TableCell>
-              <TableCell colSpan={1} align="left">
-                Support
-              </TableCell>
-              <TableCell colSpan={4} align="left">
-                Comments
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>{feedbackArray}</TableBody>
-        </Table>
-      </TableContainer>
+      <div className="table">
+        <h1>Feedback Data</h1>
+        <TableContainer component={Paper}>
+          <Table size="small" aria-label="a dense table">
+            <TableHead>
+              <TableRow>
+                <TableCell colSpan={1} align="left">
+                  ID
+                </TableCell>
+                <TableCell colSpan={1} align="left">
+                  Feeling
+                </TableCell>
+                <TableCell colSpan={1} align="left">
+                  Understanding
+                </TableCell>
+                <TableCell colSpan={1} align="left">
+                  Support
+                </TableCell>
+                <TableCell colSpan={6} align="left">
+                  Comments
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>{feedbackArray}</TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     );
   }
 }

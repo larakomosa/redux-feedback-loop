@@ -5,6 +5,10 @@ import { Button } from '@material-ui/core';
 class Success extends Component {
   handleSubmit = (event) => {
     this.props.dispatch({ type: 'START_OVER' });
+    this.props.history.push('/');
+  };
+
+  handleAdmin = (event) => {
     this.props.history.push('/admin');
   };
 
@@ -21,6 +25,17 @@ class Success extends Component {
         >
           Take a New Survey
         </Button>
+        <div className="admin">
+          <Button
+            variant="outlined"
+            color="primary"
+            type="submit"
+            size="small"
+            onClick={this.handleAdmin}
+          >
+            Admin
+          </Button>
+        </div>
       </div>
     );
   }
